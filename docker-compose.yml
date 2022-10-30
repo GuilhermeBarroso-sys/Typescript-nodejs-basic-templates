@@ -1,16 +1,6 @@
 version: '3.7'
 
 services:
-  app_dev:
-    build:
-      context: .
-    container_name: api-dev
-    ports:
-    - "3333:3333"
-    volumes:
-      - .:/usr/dev
-    depends_on:
-      - database
   database:
     container_name: api-database
     image: mysql:latest
