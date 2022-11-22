@@ -1,7 +1,8 @@
+import { APIGatewayProxyEventV2 } from "aws-lambda";
 import { prisma } from "./prisma";
 
 
-export async function hello(event)  {
+export async function hello(event : APIGatewayProxyEventV2)  {
 
 	return {
 
