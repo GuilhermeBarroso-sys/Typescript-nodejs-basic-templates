@@ -11,6 +11,7 @@
     "deploy:production": "sls deploy --stage prod"
   },
   "dependencies": {
+    "@middy/core": "^3.6.2",
     "@prisma/client": "^4.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
