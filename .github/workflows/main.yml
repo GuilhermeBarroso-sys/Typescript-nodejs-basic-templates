@@ -14,6 +14,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -24,7 +25,11 @@ jobs:
         env:
           CI: true
         run: npm ci --production      
-      - name: sync prisma
+
+      - name: Sync prisma
+        env:
+          DATABASE_URL: ${{ secrets.PRISMA_URL }}
         run: npx prisma db push
-      - name: deploy to AWS
+
+      - name: Deploy to AWS
         run: export NODE_ENV=production && npm run deploy:production
