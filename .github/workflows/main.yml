@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         env:
           CI: true
-        run: npm ci --production      
+        run: npm ci     
 
       - name: Sync prisma
         env:
