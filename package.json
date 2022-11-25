@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "sls offline --stage dev",
-    "prod": "sls offline --stage prod",
+    "deploy:dev": "sls deploy --stage dev",
     "deploy:production": "sls deploy --stage prod"
   },
   "dependencies": {
