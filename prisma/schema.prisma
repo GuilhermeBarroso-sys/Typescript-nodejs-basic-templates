@@ -11,6 +11,7 @@ datasource db {
 model Test {
   id   String @id @default(uuid())
   name String
+  age  Int?
 
   @@map("test")
 }
