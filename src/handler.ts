@@ -5,11 +5,19 @@ import { AuthenticationMiddlewareExample } from "./middlewares/AuthenticationMid
 import { IMiddlewareAttributes } from "./middlewares/IMiddlewareInterface";
 
 async function handler(event : APIGatewayProxyEventV2 & IMiddlewareAttributes)  {
-	
+	const test = await prisma.test.create({
+		data: {
+			name: "Hello World",
+			age: 20
+		}
+	});
 	return {
 
 		statusCode: 200,
-		body: JSON.stringify(event.userIdExample),
+		body: JSON.stringify({
+			test,
+			event
+		}),
 	};	
 }
 
